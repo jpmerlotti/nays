@@ -6,6 +6,7 @@ use App\Filament\Clusters\Agenda;
 use App\Filament\Clusters\Agenda\Resources\TreatmentResource\Pages;
 use App\Filament\Clusters\Agenda\Resources\TreatmentResource\RelationManagers;
 use App\Models\Customer;
+use App\Models\Service;
 use App\Models\Treatment;
 use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
@@ -43,7 +44,7 @@ class TreatmentResource extends Resource
                             ->columnSpan(1),
                         Select::make('service_id')
                             ->label('Serviço')
-                            ->options(Customer::all()->pluck('name', 'id'))
+                            ->options(Service::all()->pluck('name', 'id'))
                             ->required()
                             ->columnSpan(1),
                         Money::make('value_cents')
@@ -54,7 +55,7 @@ class TreatmentResource extends Resource
                             ->label('Data')
                             ->required()
                     ])->columns(2)
-            ]);
+                ]);
     }
 
     public static function table(Table $table): Table

@@ -12,7 +12,7 @@ class Scheduling extends Page
 {
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
-    protected static ?string $title = 'Agendamentos';
+    protected static ?string $title = 'Atendimentos';
 
     protected static string $view = 'filament.clusters.agenda.pages.scheduling';
 
@@ -23,9 +23,19 @@ class Scheduling extends Page
         return '';
     }
 
+    protected function getHeaderWidgetsColumn(): int | array
+    {
+        return [
+            'sm' => 1,
+            'md' => 3
+        ];
+    }
+
     protected function getHeaderWidgets(): array
     {
-        return [];
+        return [
+            SchedulingCalendarWidget::class,
+        ];
     }
 
     protected function getHeaderActions(): array

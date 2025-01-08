@@ -18,7 +18,9 @@ return new class extends Migration
             $table->foreignIdFor(Customer::class, 'customer_id');
             $table->foreignIdFor(Service::class, 'service_id');
             $table->integer('value_cents');
+            $table->datetime('start');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

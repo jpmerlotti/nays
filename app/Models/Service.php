@@ -13,9 +13,18 @@ class Service extends Model
     protected $fillable = [
         'name',
         'price',
-        'photo'
+        'photo',
+        'duration'
     ];
 
+    public function casts(): array
+    {
+        return [
+            'name' => 'string',
+            'price' => 'int',
+            'duration' => 'int'
+        ];
+    }
 
     public function tratments(): HasMany
     {

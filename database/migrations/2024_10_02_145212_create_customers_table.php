@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('phone');
             $table->string('anamnese_url')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

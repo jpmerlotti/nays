@@ -68,14 +68,16 @@ class ServiceResource extends Resource
                     ->label('Nome'),
                 TextColumn::make('price')
                     ->label('Preço')
-                    ->formatStateUsing(fn($state) => 'R$ ' . number_format($state / 100, 2, '.')),
+                    ->formatStateUsing(fn($state) => 'R$ ' . number_format($state / 100, 2, ',', '.')),
+                    TextColumn::make('duration')
+                        ->label('Duração em minutos')
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make()
-                    ->color('warning'),
+                Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make()
             ]);
     }
 
