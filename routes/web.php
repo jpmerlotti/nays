@@ -7,4 +7,4 @@ Route::get('/', function () {
     return redirect(route("filament.admin.auth.login"));
 });
 
-Route::get('/customers/{id}/anamnese')
+Route::get('/customers/{id}/anamnese');

@@ -1,66 +1,105 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+	<h2 align="center">Nays</h2>
+</p>
+<h4 align="center"> 
+	🚧  Projeto em construção... 🚀  🚧
+</h4>
+<p align="center">
+	<img src="https://img.shields.io/badge/version project-1.0-brightgreen" alt="version project">
+    <img src="https://img.shields.io/badge/Php-8.4.1-informational" alt="stack php">
+    <img src="https://img.shields.io/badge/Laravel-11.4-informational&color=brightgreen" alt="stack laravel">
+    <img src="https://img.shields.io/badge/Filament-3.2-informational" alt="stack Filament">
+    <img src="https://img.shields.io/badge/TailwindCss-3.2-brightgreen" alt="stack Tailwind">
+	<a href="https://opensource.org/licenses/GPL-3.0">
+		<img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GPLv3 License">
+	</a>
 </p>
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### :package: dependências do projeto
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   Docker + docker-compose
+-   curl
+-   Make 4.x
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+### :books: Configurando o projeto em um novo ambiente
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Simplesmente execute o comando `make` no seu terminal:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+```bash
+make
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Agora, basta acessar a URL `http://localhost`
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### :books: Comandos make
 
-### Premium Partners
+Simplesmente execute o comando `make` no seu terminal:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+```bash
+make up // inicializa o projeto (docker)
+```
 
-## Contributing
+```bash
+make down // encerra o projeto (docker)
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+make restart // executa make down e make up
+```
 
-## Code of Conduct
+```bash
+make populate // roda migrate:fresh --seed
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## :information_source: Ferramentas de desenvolvimento
 
-## Security Vulnerabilities
+**Laravel Stan** é uma ferramenta de análise estática para o PHP. Ela ajuda os desenvolvedores a detectar potenciais erros de código, inconsistências e problemas de tipo durante o desenvolvimento. O PHPStan examina o código-fonte do PHP sem realmente executá-lo e fornece feedback sobre possíveis problemas, como chamadas de métodos inexistentes, acessos a propriedades indefinidas, erros de tipo e muito mais. Isso ajuda os desenvolvedores a escrever código mais seguro, robusto e menos propenso a erros.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+make stan // analisador erros no código
+```
 
-## License
+**Laravel Pint** é um corretor de estilo de código. Ele é construído sobre o PHP-CS-Fixer e torna simples garantir que seu estilo de código permaneça limpo e consistente.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+make pint // aplica estilização de código conforme PSR
+```
+
+## :heavy_check_mark: Testes automatizados
+
+É possivel criação de testes E2E automzatizados utilizando o Laravel Dusk.
+Após a criação dos arquivos de testes, para executa-los utilize o comando abaixo. Ele executará os testes conforme ambiente informado no arquivo cypress.confi.js.
+
+```bash
+sh testing.sh
+```
+
+---
+
+### :ledger: Documentação
+
+A documentação para o usuário final foi utilizado o **Larecipe**. Ele uma ferramenta desenvolvida pelo Facebook que permite criar conteúdos estáticos usando como base documentos Markdown. [Site oficial Larecipe](https://larecipe.saleem.dev/docs/2.2/overview)
+\
+\
+Todos os arquivos da documentaçãoestá localizado no diretório `/resources/docs` e após compilado, as páginas são geradas no diretório publico através do comando.
+
+```bash
+make doc
+```
+
+---
+
+### :exclamation: Orientações
+
+-   Caso tenha algum problema com a instalação, execute o comando `make rebuild`
+-   Para fazer uma nova instalação execute o comando `make`
+-   Inicializar os container do projeto execute o comando `make up`
+-   Encerrar os container do projeto execute o comando `make down`
+-   Maiores informações, vide o arquivo Makefile
+-   Correr pro abraço!
